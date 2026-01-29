@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meesho Clone</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+
+  <div class="offer-strip">
+  <marquee scrollamount="5">🎉 Free Delivery on First Order! | Get 20% off on ₹499+ | Use Code: PEEYUSH20 🎁 |Do not miss out!</marquee>
+</div>
+
+  <section class="top-banner">
+  <img src="top banner.png" alt="Mega Discount Banner">
+</section>
+
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">Shopiyo</h1>
+        <div class="search-container">
+  <i class="fas fa-search search-icon"></i>
+   <input type="text" class="search-box" placeholder="Search for products..."> 
+</div>
+
+        
+      <div class="menu">
+  <a href="#">Download App</a>
+   <a href="#">Become a Supplier</a>
+  <div class="dropdown">
+    <button class="dropbtn">🤵 Profile</button>
+    <div class="dropdown-content profile-dropdown">
+      <form>
+      <input type="email" id="email" placeholder="Email">
+      <input type="password" id="password" placeholder="Password">
+      <button onclick="login()">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn">🛒 Cart (<span id="cart-count">0</span>)</button>
+    <div class="dropdown-content cart-dropdown">
+      <ul id="cart-items-mini"></ul>
+      <p id="cart-total-mini">Total: ₹0</p>
+        <button onclick="clearCart()" class="clear-cart-btn">Clear Cart</button>
+
+    </div>
+    
+
+  </div>
+</div>  
+      </div>
+    </nav>
+
+
+   <div class="category-scroll">
+  <button>👗 Kurtis</button>
+  <button>👖 Jeans</button>
+  <button>👜 Bags</button>
+  <button>👠 Footwear</button>
+  <button>🧢 Accessories</button>
+  <button>👕 T-Shirts</button>
+  <button>👚 Tops</button>
+  <button>👶 Kidswear</button>
+  <button>👨 Men's Wear</button>
+  <button>👩 Women's Wear</button>
+  <button>🛏️ Bedsheets</button>
+  <button>⌚ Watches</button>
+  <button>🕶️ Sunglasses</button>
+  <button>💄 Beauty</button>
+  <button>🧴 Skincare</button>
+<button>📱 Electronics</button>
+<button>shoes</button>
+
+</div>
+
+
+  </header>
+  <div class="flash-sale">
+  <h3>Flash Sale Ends In: <span id="timer">00:00:00</span></h3>
+</div>
+
+ <section class="product-grid" style="position: relative;"> 
+    <div class="product-card">
+         <span class="badge new">New</span>
+      <img src="https://images.meesho.com/images/products/531493294/j6gi6_512.avif?width=360" alt="Product 1">
+      <h3>Stylish Kurti</h3>
+      <p>₹399</p>
+      <button onclick="addToCart('Stylish Kurti', 399)">Add to Cart</button>
+    </div>
+    
+    <div class="product-card">
+      <span class="badge limited">Limited</span>
+      <img src="https://images.meesho.com/images/products/503007534/bt8eo_512.avif?width=360" alt="Product 2">
+      <h3>Men's T-Shirt</h3>
+      <p>₹299</p>
+      <button onclick="addToCart('Men\'s T-Shirt', 299)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <span class="badge sale">Sale</span>
+      <img src="https://images.meesho.com/images/products/377672122/qufzs_512.avif?width=360" alt="Product 3">
+      <h3>Trendy Jeans</h3>
+      <p>₹599</p>
+      <button onclick="addToCart('Trendy Jeans', 599)">Add to Cart</button>
+    </div>
+
+
+     <div class="product-card">
+      <span class="badge best-seller">Best Seller</span>
+      <img src="https://images.meesho.com/images/products/522359833/4ar91_512.avif?width=360" alt="Product 4">
+      <h3>Bedsheet</h3>
+      <p>₹162</p>
+      <button onclick="addToCart('Bedsheet', 162)">Add to Cart</button>
+    </div>
+
+     <div class="product-card">
+      <span class="badge new">New</span>
+      <img src="https://images.meesho.com/images/products/494551478/ygzk5_512.avif?width=360" alt="Product 5">
+      <h3>Jewellarys</h3>
+      <p>₹584</p>
+      <button onclick="addToCart('Jewellarys', 584)">Add to Cart</button>
+    </div>
+
+     <div class="product-card">
+      <span class="badge hot">Hot</span>
+      <img src="https://images.meesho.com/images/products/412594502/h8exo_512.avif?width=360" alt="Product 6">
+      <h3>Trendy wallet</h3>
+      <p>₹199</p>
+      <button onclick="addToCart('Trendy wallet', 199)">Add to Cart</button>
+    </div>
+
+     <div class="product-card">
+      <span class="badge new">New</span>
+      <img src="https://images.meesho.com/images/products/151398295/cylv6_512.avif?width=512" alt="Product 7">
+      <h3>Trendy mobile holders</h3>
+      <p>₹99</p>
+      <button onclick="addToCart('Trendy mobile holders', 99)">Add to Cart</button>
+    </div>
+
+     <div class="product-card">
+      <span class="badge featured">Featured</span>
+      <img src="https://images.meesho.com/images/products/433761022/fr69d_512.avif?width=360" alt="Product 8">
+      <h3>Trendy jackets</h3>
+      <p>₹699</p>
+      <button onclick="addToCart('Trendy jackets', 599)">Add to Cart</button>
+    </div>
+
+
+     <div class="product-card">
+      <span class="badge new">New</span>
+      <img src="https://images.meesho.com/images/products/406597062/6njdg_512.avif?width=512" alt="Product 9">
+      <h3> sarees</h3>
+      <p>₹999</p>
+      <button onclick="addToCart('sarees', 999)">Add to Cart</button>
+    </div>
+
+
+     <div class="product-card">
+      <span class="badge exclusive">Exclusive</span>
+      <img src="https://images.meesho.com/images/products/374131165/t34bs_512.avif?width=360" alt="Product 10">
+      <h3>bike covers</h3>
+      <p>₹299</p>
+      <button onclick="addToCart('bike covers', 299)">Add to Cart</button>
+    </div>
+
+
+     <div class="product-card">
+      <span class="badge new">New</span>
+      <img src="https://images.meesho.com/images/products/465125239/ssysu_512.avif?width=360" alt="Product 11">
+      <h3> shoes</h3>
+      <p>₹899</p>
+      <button onclick="addToCart('shoes', 899)">Add to Cart</button>
+    </div>
+
+
+     <div class="product-card">
+      <span class="badge best-seller">Best Seller</span>
+      <img src="https://images.meesho.com/images/products/482371622/oap91_512.avif?width=360" alt="Product 12">
+      <h3>Trendy shoes</h3>
+      <p>₹399</p>
+      <button onclick="addToCart('Trendy shoes', 399)">Add to Cart</button>
+    </div>
+
+
+     <div class="product-card">
+      <span class="badge hot">Hot</span>
+      <img src="https://images.meesho.com/images/products/346697857/yseoa_512.avif?width=360" alt="Product 13">
+      <h3> laptop</h3>
+      <p>₹65599</p>
+      <button onclick="addToCart('laptop', 65599)">Add to Cart</button>
+    </div>
+
+
+     <div class="product-card">
+      <span class="badge top ">Top selling</span>
+      <img src="https://images.meesho.com/images/products/558421512/c8mej_512.avif?width=360" alt="Product 14">
+      <h3>Trendy Rakhees</h3>
+      <p>₹99</p>
+      <button onclick="addToCart('Trendy Rakhees', 99)">Add to Cart</button>
+    </div>
+
+
+     <div class="product-card">
+      <span class="badge discount products">Discount products</span>
+      <img src="https://images.meesho.com/images/products/537165409/tzzpx_512.avif?width=360" alt="Product 15">
+      <h3>water bottles</h3>
+      <p>₹799</p>
+      <button onclick="addToCart('water bottles', 799)">Add to Cart</button>
+    </div>
+
+
+     <div class="product-card">
+      <span class="badge trending">Trending</span>
+      <img src="https://images.meesho.com/images/products/442005442/y4hlc_512.avif?width=360" alt="Product 16">
+      <h3>Trendy watches</h3>
+      <p>₹1199</p>
+      <button onclick="addToCart('Trendy watches', 1199)">Add to Cart</button>
+    </div>
+
+
+     <div class="product-card">
+      <span class="badge limited">Limited</span>
+      <img src="https://images.meesho.com/images/products/471568285/ihk5q_512.avif?width=360" alt="Product 17">
+      <h3>Trendy bangles</h3>
+      <p>₹599</p>
+      <button onclick="addToCart('bangles', 1199)">Add to Cart</button>
+    </div>
+
+
+     <div class="product-card">
+      <span class="badge new">New</span>
+      <img src="https://images.meesho.com/images/products/422574485/vwkra_512.avif?width=360" alt="Product 18">
+      <h3>sunglass</h3>
+      <p>₹499</p>
+      <button onclick="addToCart('sunglass', 499)">Add to Cart</button>
+    </div>
+
+
+     <div class="product-card">
+      <span class="badge hot">Hot</span>
+      <img src="https://images.meesho.com/images/products/567202294/ylsmc_512.avif?width=360" alt="Product 19">
+      <h3>Trendy caps</h3>
+      <p>₹599</p>
+      <button onclick="addToCart('Trendy caps', 599)">Add to Cart</button>
+    </div>
+
+
+     <div class="product-card">
+      <span class="badge new">New</span>
+      <img src="https://images.meesho.com/images/products/42180814/lrab3_512.avif?width=360" alt="Product 20">
+      <h3>sports</h3>
+      <p>₹999</p>
+      <button onclick="addToCart('sports', 599)">Add to Cart</button>
+    </div>
+    
+
+    <div class="product-card">
+      <span class="badge discount">Discount</span>
+      <img src="https://images.meesho.com/images/products/489518437/iwtlp_512.avif?width=360" alt="Product 4">
+      <h3>Mobile cover</h3>
+      <p>₹223</p>
+      <button onclick="addToCart('mobile cover', 223 )">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <span class="badge new">New</span>
+      <img src="https://images.meesho.com/images/products/315525778/2ig4x_512.avif?width=360" alt="Product 4">
+      <h3>Hair oil</h3>
+      <p>₹102</p>
+      <button onclick="addToCart('Bedsheet', 162)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <span class="badge best-seller">Best Selling</span>
+      <img src="https://images.meesho.com/images/products/381229905/tjtew_512.avif?width=360" alt="Product 4">
+      <h3>Bag</h3>
+      <p>₹294</p>
+      <button onclick="addToCart('Bedsheet', 162)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <span class="badge new">New</span>
+      <img src="https://images.meesho.com/images/products/496326140/4dbcm_512.avif?width=360" alt="Product 4">
+      <h3>Bluetooth speakers</h3>
+      <p>₹420</p>
+      <button onclick="addToCart('Bedsheet', 162)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <span class="badge trending">Trending</span>
+      <img src="https://images.meesho.com/images/products/64668045/frwap_512.avif?width=360" alt="Product 4">
+      <h3>Football</h3>
+      <p>₹397</p>
+      <button onclick="addToCart('Bedsheet', 162)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <span class="badge new">New</span>
+      <img src="https://images.meesho.com/images/products/549009694/eztei_512.avif?width=360" alt="Product 4">
+      <h3>Cricket bats</h3>
+      <p>₹1100</p>
+      <button onclick="addToCart('Bedsheet', 162)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <span class="badge limited">Limited</span>
+      <img src="https://images.meesho.com/images/products/428908493/luba8_512.avif?width=360" alt="Product 4">
+      <h3>New cricket ball</h3>
+      <p>₹262</p>
+      <button onclick="addToCart('Bedsheet', 162)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <span class="badge trending">Trending</span>
+      <img src="https://images.meesho.com/images/products/23670280/6dc45_512.avif?width=360" alt="Product 4">
+      <h3>Soft toy</h3>
+      <p>₹203</p>
+      <button onclick="addToCart('Bedsheet', 162)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <span class="badge new">New</span>
+      <img src="https://images.meesho.com/images/products/446120818/48m4c_512.avif?width=360" alt="Product 4">
+      <h3>Shorts</h3>
+      <p>₹325</p>
+      <button onclick="addToCart('Bedsheet', 162)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <span class="badge exclusive">Exclusive</span>
+      <img src="https://images.meesho.com/images/products/547154287/efbay_512.avif?width=360" alt="Product 4">
+      <h3>Beard oil</h3>
+      <p>₹109</p>
+      <button onclick="addToCart('Bedsheet', 162)">Add to Cart</button>
+    </div>
+
+
+  </section>
+
+  <section class="bottom-banner">
+  <img src="bottom banner.png" alt="Special Offer Banner">
+</section>
+
+<div class="testimonials">
+  <h3>What Our Customers Say</h3>
+  <div class="testimonial-card">
+    <p>"Amazing quality at this price!"</p>
+    <span>- Rahul Sharma</span>
+  </div>
+</div>
+
+
+<div class="newsletter">
+  <h3>Subscribe for Offers</h3>
+  <input type="email" placeholder="Enter your email">
+  <button>Subscribe</button>
+</div>
+
+
+<div class="recently-viewed">
+  <h3>Recently Viewed</h3>
+  <div class="recent-scroll">
+    <img src="https://images.meesho.com/images/products/489518437/iwtlp_512.avif?width=360" alt="mobile cover">
+    <img src="https://images.meesho.com/images/products/428559569/77slw_512.avif?width=360" alt="Product 2">
+    <img src="https://images.meesho.com/images/products/502305705/ezkxf_512.avif?width=360" alt="Product 3">
+     <img src="https://images.meesho.com/images/products/554685478/z5uvz_512.avif?width=360" alt="Product 4">
+     <img src="https://images.meesho.com/images/products/533264828/slsrb_512.avif?width=360" alt="Product 5">
+     <img src="https://images.meesho.com/images/products/435893871/vpjgb_512.avif?width=360" alt="Product 6">
+     <img src="https://images.meesho.com/images/products/468031806/capbz_512.avif?width=360" alt="Product 7">
+     <img src="https://images.meesho.com/images/products/367971831/21zqm_512.avif?width=360" alt="Product 8">
+     <img src="https://images.meesho.com/images/products/465100991/mru3l_512.avif?width=360" alt="Product 9">
+     <img src="https://images.meesho.com/images/products/493930476/7x2lc_512.avif?width=360" alt="Product 10">
+     <img src="https://images.meesho.com/images/products/485836092/wh6fo_512.avif?width=360" alt="Product 11">
+     
+     
+  </div>
+</div>
+
+<div class="features">
+  <div class="feature">🚚 Free Delivery</div>
+  <div class="feature">🔄 Easy Returns</div>
+  <div class="feature">💯 Best Quality</div>
+</div>
+<div class="trust-badges">
+  🔐 100% Secure Payments | 🏅 Verified Sellers | 📞 24/7 Support
+</div>
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col">
+      <h3>Shop Non-Stop on Meesho</h3>
+      <p>Trusted by over 1 Crore Indians<br>Cash on Delivery | Free Delivery</p>
+      <div class="app-download">
+        <img src="https://images.meesho.com/images/pow/playstore-icon-big.webp" alt="Play Store">
+        <img src="https://images.meesho.com/images/pow/appstore-icon-big.webp" alt="App Store">
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Careers</h4>
+      <a href="#">Become a Supplier</a>
+      <a href="#">Our Story</a>
+      <a href="#">Press</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Customer Support</h4>
+      <a href="#">Help Center</a>
+      <a href="#">Track Orders</a>
+      <a href="#">Returns</a>
+      <a href="#">Report a Product</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Connect with Us</h4>
+      <div class="social-icons">
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Instagram"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="YouTube"></a>
+      </div>
+    </div>
+  </div>
+   <div class="footer-bottom">
+    <p>© 2025 Shopiyo Clone. All rights reserved. Developed  by peeyush tiwari .Shopping Simplified,Smiles Amplified </p>
+  </div> 
+ 
+
+
+</footer>
+<!-- //feedback -->
+
+<section class="feedback-section">
+  <h2>We value your feedback!</h2>
+  <form class="feedback-form">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea rows="4" placeholder="Your Feedback" required></textarea>
+
+    <div class="rating">
+      <label>Rate us:</label>
+      <div class="stars">
+        <input type="radio" name="rating" id="star5" value="5"><label for="star5">&#9733;</label>
+        <input type="radio" name="rating" id="star4" value="4"><label for="star4">&#9733;</label>
+        <input type="radio" name="rating" id="star3" value="3"><label for="star3">&#9733;</label>
+        <input type="radio" name="rating" id="star2" value="2"><label for="star2">&#9733;</label>
+        <input type="radio" name="rating" id="star1" value="1"><label for="star1">&#9733;</label>
+      </div>
+    </div>
+
+    <button type="submit">Submit Feedback</button>
+    
+</div>
+  </form>
+</section>
+
+
+<div class="mobile-nav">
+  <a href="#"><i class="fas fa-home"></i><span>Home</span></a>
+  <a href="#"><i class="fas fa-th-large"></i><span>Categories</span></a>
+  <a href="#"><i class="fas fa-shopping-cart"></i><span>Cart</span></a>
+  <a href="#"><i class="fas fa-user"></i><span>Profile</span></a>
+</div>
+
+<button id="scrollTopBtn">⬆️ Top</button>
+
+
+  <script src="script.js"></script>
+  
+</body>
+</html>
+
+
