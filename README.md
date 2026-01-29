@@ -21,13 +21,6 @@ The main objective of this project is to strengthen frontend fundamentals, impro
 
 ---
 
-## 📸 Project Screenshot
-
-Below is a preview of the website interface:
-
-![Meesho Clone Screenshot](meesho.png)
-
-
 ---
 
 ## ✨ Features
@@ -109,5 +102,5 @@ All design inspiration is taken from Meesho, and no copyright infringement is in
 ## 👤 Author
 
 **Peeyush Tiwari**  
-Frontend / MERN Stack Developer  <br>
+Frontend  Developer  <br>
 Passionate about building clean, scalable, and user-focused web applications.<br>
